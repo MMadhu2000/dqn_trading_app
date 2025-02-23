@@ -1,0 +1,7 @@
+streamlit 
+datetime 
+yfinance 
+pandas 
+niumpy 
+torch
+matplotlib
