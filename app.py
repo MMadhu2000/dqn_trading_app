@@ -158,6 +158,7 @@ if 'data' in st.session_state and not st.session_state['data'].empty:
         total_rewards = []
 
         for episode in range(episodes):
+            progress_text.text(f"Training Progress: Episode {episode+1} / {episodes}")
             state = env.reset()
             done = False
             total_reward = 0
@@ -171,7 +172,6 @@ if 'data' in st.session_state and not st.session_state['data'].empty:
 
             agent.replay(batch_size)
             total_rewards.append(total_reward)
-            st.write(f"Episode {episode+1}/{episodes}, Total Reward: {total_reward}")
 
         st.write(f"Training Complete! Final Balance: ${env.balance:.2f}")
         st.write(f"Total Profit: ${env.balance - initial_balance:.2f}")
