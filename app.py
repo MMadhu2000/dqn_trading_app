@@ -154,7 +154,7 @@ if 'data' in st.session_state and not st.session_state['data'].empty:
         env = TradeEnv(st.session_state['data'])
         agent = DQNAgent(state_size=4, action_size=3)
         batch_size = 32
-        episodes = 300
+        episodes = 500
         total_rewards = []
 
         for episode in range(episodes):
@@ -162,6 +162,7 @@ if 'data' in st.session_state and not st.session_state['data'].empty:
             state = env.reset()
             done = False
             total_reward = 0
+            progress_text = st.empty()
 
             while not done:
                 action = agent.act(state)
