@@ -185,5 +185,3 @@ if 'data' in st.session_state and not st.session_state['data'].empty:
             st.pyplot(plt)
         else:
             st.warning("No rewards recorded — check if training loop executed properly!")
-    
-#streamlit run C:/Users/Madhu/Desktop/Project/dqn_trading_app.py
