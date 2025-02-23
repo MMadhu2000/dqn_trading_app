@@ -2,6 +2,6 @@ streamlit
 datetime 
 yfinance 
 pandas 
-niumpy 
+numpy 
 torch
 matplotlib
