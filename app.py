@@ -156,14 +156,14 @@ if 'data' in st.session_state and not st.session_state['data'].empty:
         batch_size = 32
         episodes = 500
         total_rewards = []
+        progress_text = st.empty()
 
         for episode in range(episodes):
             progress_text.text(f"Training Progress: Episode {episode+1} / {episodes}")
             state = env.reset()
             done = False
             total_reward = 0
-            progress_text = st.empty()
-
+            
             while not done:
                 action = agent.act(state)
                 next_state, reward, done, _ = env.step(action)
